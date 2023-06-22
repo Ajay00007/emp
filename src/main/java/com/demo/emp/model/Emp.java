@@ -8,6 +8,8 @@ public class Emp {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	@Lob
+	private byte[] image;
 	private String name;
 	private String sex;
 	private String dob;
@@ -18,6 +20,12 @@ public class Emp {
 	}
 	public void setId(long id) {
 		this.id = id;
+	}
+	public byte[] getImage() {
+		return image;
+	}
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 	public String getName() {
 		return name;
@@ -49,9 +57,10 @@ public class Emp {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-	public Emp(long id, String name, String sex, String dob, long salary, String department) {
+	public Emp(long id, byte[] image, String name, String sex, String dob, long salary, String department) {
 		super();
 		this.id = id;
+		this.image = image;
 		this.name = name;
 		this.sex = sex;
 		this.dob = dob;
@@ -60,7 +69,7 @@ public class Emp {
 	}
 	public Emp() {
 		super();
-		
+		// TODO Auto-generated constructor stub
 	}
 	
 
